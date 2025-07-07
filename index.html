@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glowing Metrics</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root { --color-primary: #d4bf9e; --color-secondary: #4d948d; --color-accent: #bb874f; --color-muted: #908a6d; --color-bg-dark: #242527; --color-bg-light: #424342; }
+    body { margin: 0; font-family: sans-serif; background: linear-gradient(180deg,var(--color-bg-dark),var(--color-muted)); color: var(--color-primary); scroll-behavior: smooth; }
+    nav a, .btn-primary { transition: all 0.2s ease-in-out; }
+    .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .slide-up { animation: slideUp 0.8s ease-out forwards; opacity: 0; }
+    @keyframes slideUp { from { transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .btn-primary { background-color: var(--color-accent); color: var(--color-bg-dark); padding: 0.75rem 1.5rem; border-radius: 9999px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); font-weight: 600; display: inline-block; }
+    .btn-primary:hover { background-color: var(--color-secondary); transform: translateY(-2px) scale(1.02); box-shadow: 0 6px 10px rgba(0,0,0,0.4); }
+    section { display: none; padding: 1.5rem; min-height: 100vh; padding-top: 5rem; }
+    h2, h3, h4 { letter-spacing: 0.5px; }
+    .gallery img { transition: transform 0.2s ease; }
+    .gallery img:hover { transform: translateY(-4px) scale(1.05); }
+  </style>
+</head>
+<body>
+  <nav class="fixed top-0 w-full bg-[rgba(36,37,39,0.7)] backdrop-blur-lg p-4 flex flex-col md:flex-row items-center justify-between z-20">
+    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+      <span class="text-xl md:text-2xl font-bold">Glowing Metrics</span>
+      <a href="#" onclick="showSection('home'); return false;" class="text-base md:text-lg hover:text-[var(--color-accent)]">Home</a>
+      <a href="#" onclick="showSection('sobre'); return false;" class="text-base md:text-lg hover:text-[var(--color-accent)]">Sobre</a>
+      <a href="#" onclick="showSection('servicos'); return false;" class="text-base md:text-lg hover:text-[var(--color-accent)]">Serviços</a>
+      <a href="#" onclick="showSection('contato'); return false;" class="text-base md:text-lg hover:text-[var(--color-accent)]">Contato</a>
+    </div>
+    <div class="flex space-x-4 mt-2 md:mt-0">
+      <a href="#" class="text-white hover:text-[var(--color-accent)] text-xl"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-white hover:text-[var(--color-accent)] text-xl"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-white hover:text-[var(--color-accent)] text-xl"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white hover:text-[var(--color-accent)] text-xl"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </nav>
+
+  <section id="home" class="flex flex-col items-center justify-center text-center min-h-screen p-6 fade-in">
+    <img src="LOGO transparente GM.png" alt="Logo" class="w-3/4 sm:w-1/2 md:w-1/3 mb-4" />
+    <h2 class="text-2xl sm:text-4xl md:text-6xl font-semibold mb-2">Transformando dados em resultados brilhantes</h2>
+    <p class="text-base sm:text-lg md:text-xl max-w-lg">Estratégias de marketing digital sob medida para sua marca crescer.</p>
+  </section>
+
+  <section id="sobre" class="flex flex-col items-center justify-center text-center min-h-screen p-6 slide-up">
+    <h3 class="text-xl sm:text-3xl md:text-4xl font-semibold mb-4">Sobre</h3>
+    <p class="text-base sm:text-lg md:text-2xl leading-relaxed max-w-2xl">
+      Na Glowing Metrics, unimos <span class="text-[var(--color-accent)] font-bold">criatividade</span> e <span class="underline">análise de dados</span> para construir campanhas que iluminam os resultados do seu negócio. Com foco em performance, oferecemos soluções completas em mídias sociais, Google Ads e muito mais.
+    </p>
+    <div class="gallery mt-6">
+      <img src="post instagram Você não precisa de promessas. Precisa de presença..png" class="w-40 sm:w-48 md:w-56" alt="Post 1" />
+      <img src="NIKE AF1 par.png" class="w-40 sm:w-48 md:w-56" alt="Nike AF1" />
+      <img src="post instagram Mesmo sozinha, a gota segue. Porque ela sabe o rio começa assim..png" class="w-40 sm:w-48 md:w-56" alt="Post 2" />
+    </div>
+  </section>
+
+  <section id="servicos" class="flex flex-col items-center justify-center text-center min-h-screen p-6 slide-up">
+    <h3 class="text-xl sm:text-3xl md:text-4xl font-semibold mb-6">Serviços</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-[var(--color-bg-light)]">
+        <h4 class="text-lg sm:text-xl md:text-2xl mb-1">Mídias Sociais</h4>
+        <p class="text-sm sm:text-base">Gestão e criação de conteúdo para Instagram e Facebook.</p>
+      </div>
+      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-[var(--color-bg-light)]">
+        <h4 class="text-lg sm:text-xl md:text-2xl mb-1">Google Ads</h4>
+        <p class="text-sm sm:text-base">Campanhas otimizadas para pesquisa e display.</p>
+      </div>
+      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-[var(--color-bg-light)]">
+        <h4 class="text-lg sm:text-xl md:text-2xl mb-1">YouTube Ads</h4>
+        <p class="text-sm sm:text-base">Vídeos segmentados para máxima conversão.</p>
+      </div>
+      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-[var(--color-bg-light)]">
+        <h4 class="text-lg sm:text-xl md:text-2xl mb-1">Criação de Site</h4>
+        <p class="text-sm sm:text-base">Desenvolvimento de websites responsivos e otimizados.</p>
+      </div>
+      <div class="p-4 sm:p-6 rounded-lg shadow-lg bg-[var(--color-bg-light)]">
+        <h4 class="text-lg sm:text-xl md:text-2xl mb-1">Material para Divulgação</h4>
+        <p class="text-sm sm:text-base">Produção de flyers, banners e materiais gráficos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="flex flex-col items-center justify-center text-center min-h-screen p-6 slide-up">
+    <h3 class="text-xl sm:text-3xl md:text-4xl font-semibold mb-4">Contato</h3>
+    <form id="contact-form" action="https://formspree.io/f/xjkrdyzr" method="POST" class="w-full max-w-sm flex flex-col space-y-4">
+      <input type="text" name="Nome" placeholder="Seu nome" required class="p-3 rounded-lg text-base sm:text-lg" />
+      <input type="tel" name="Telefone" placeholder="Seu telefone" required class="p-3 rounded-lg text-base sm:text-lg" />
+      <input type="email" name="Email" placeholder="Seu e-mail" required class="p-3 rounded-lg text-base sm:text-lg" />
+      <textarea name="Mensagem" placeholder="Sua mensagem" rows="5" required class="p-3 rounded-lg text-base sm:text-lg"></textarea>
+      <button type="submit" class="btn-primary py-3 rounded-lg text-base sm:text-lg">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/5515998137954" class="fixed bottom-6 right-6 flex items-center space-x-2 px-4 py-2 bg-gradient-to-br from-green-500 to-gray-600 border-2 border-[var(--color-primary)] rounded-full shadow-lg hover:scale-105 transition-transform" style="color:white;">
+    <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
+    <span class="text-base sm:text-lg font-semibold">WhatsApp</span>
+  </a>
+
+  <script>
+    function showSection(id) {
+      ['home','sobre','servicos','contato'].forEach(sec => {
+        const el = document.getElementById(sec);
+        if (el) el.style.display = (sec === id ? 'flex' : 'none');
+      });
+    }
+    showSection('home');
+  </script>
+</body>
+</html>
